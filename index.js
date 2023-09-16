@@ -20,12 +20,12 @@ io.on('connection', socket => {
 
         socket.join(user.room);
 
-    socket.emit('message', formatMessage('botname', "Welcome to chatbox"));
+      socket.emit('message', formatMessage('botname', "Welcome to chatbox"));
 
         // to boardcast when user connects
-        socket.broadcast.to(user.room).emit('message', formatMessage('botname', `${user.username} has joined the chat`));
+     socket.broadcast.to(user.room).emit('message', formatMessage('botname', `${user.username} has joined the chat`));
 
-    })
+    });
 
     //listen chatmessage
     socket.on('chatmessage', (msg) => {

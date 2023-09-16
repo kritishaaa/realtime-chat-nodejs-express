@@ -3,9 +3,10 @@ const users=[];
 
 // to join user to chat
  function joinUser(id,username,room){
-    const user={id,username,room};
+    const user = {id, username, room};
 
     users.push(user);
+    return user;
  }
 
  //to find the current user
