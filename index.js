@@ -28,6 +28,8 @@ io.on('connection', socket => {
  //listen chatmessage
  socket.on('chatmessage', (msg)=>{
     io.emit('message',msg);
+
+
  })
 })
 
