@@ -1,4 +1,3 @@
-
 const users=[];
 
 // to join user to chat
@@ -16,7 +15,25 @@ const users=[];
 
  }
 
+ // leaves the chat
+
+ function userLeave(id){
+   const index = users.findIndex(user => user.id === id)
+   if(index !== -1){
+       return users.splice(index , 1 )[0];
+      
+   }
+ }
+ // get room users
+ function getUserInRoom (room){
+   return users.filter(user => user.room === room);
+ }
+
  module.exports={
     joinUser , 
-    getCurrentUser 
+    getCurrentUser,
+    userLeave,
+    getUserInRoom
+
+
  }
